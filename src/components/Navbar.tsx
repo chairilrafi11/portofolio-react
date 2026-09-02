@@ -1,6 +1,16 @@
+"use client"
+import { motion, useReducedMotion } from "motion/react"
+
 function Navbar() {
+  const reduceMotion = useReducedMotion()
+
   return (
-    <nav className="fixed top-0 z-50 w-full border-b border-border-subtle bg-background">
+    <motion.nav
+      className="fixed top-0 z-50 w-full border-b border-border-subtle bg-background"
+      initial={reduceMotion ? false : { opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+    >
       <div className="mx-auto flex w-full items-center justify-between px-margin-desktop py-4">
         <a
           className="font-headline-md text-headline-md font-bold tracking-tighter text-on-background"
@@ -35,7 +45,7 @@ function Navbar() {
           Contact
         </a>
       </div>
-    </nav>
+    </motion.nav>
   )
 }
 

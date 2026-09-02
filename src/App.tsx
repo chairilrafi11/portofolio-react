@@ -16,7 +16,7 @@ function App() {
     <div className="relative min-h-screen bg-background-base font-body-md text-on-background selection:bg-primary-container selection:text-on-primary-container">
       <div className="grid-bg pointer-events-none fixed inset-0 z-0 opacity-20" />
       <Navbar />
-      <main className="relative z-10 mx-auto w-full max-w-[1920px] px-margin-desktop pt-[120px]">
+      <main className="relative z-10 mx-auto w-full max-w-[1920px] px-margin-desktop pt-[80px]">
         <Hero />
         <Biography />
         <Snapshot />

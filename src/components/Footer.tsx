@@ -31,19 +31,19 @@ function Footer() {
         <div className="flex gap-gutter">
           <a
             className="font-metadata-sm text-metadata-sm text-on-surface-variant transition-colors duration-300 hover:text-primary"
-            href="#"
+            href="https://chairil.netlify.app"
           >
-            GitHub
+            Website
           </a>
           <a
             className="font-metadata-sm text-metadata-sm text-on-surface-variant transition-colors duration-300 hover:text-primary"
-            href="#"
+            href="https://linkedin.com/in/chairil-rafi-705510180"
           >
             LinkedIn
           </a>
           <a
             className="font-metadata-sm text-metadata-sm text-on-surface-variant transition-colors duration-300 hover:text-primary"
-            href="#"
+            href="mailto:chairilrafi11@gmail.com"
           >
             Email
           </a>

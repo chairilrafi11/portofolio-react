@@ -5,11 +5,8 @@ interface Certification {
 }
 
 const certifications: Certification[] = [
-  { title: "AWS Certified Solutions Architect", issuer: "Amazon Web Services", year: "2023" },
-  { title: "Google Cloud Professional Engineer", issuer: "Google Cloud", year: "2022" },
-  { title: "Certified Kubernetes Administrator (CKA)", issuer: "Cloud Native Computing Foundation", year: "2021" },
-  { title: "MongoDB Certified Developer", issuer: "MongoDB Inc.", year: "2020" },
-  { title: "Flutter Certified Application Developer", issuer: "Google", year: "2019" },
+  { title: "CCNA (Introduction to Networks)", issuer: "Cisco Networking Academy", year: "2025" },
+  { title: "Certificate of Competence (UJIKOM)", issuer: "Ministry of Education, Indonesia", year: "2019" },
 ]
 
 function Certifications() {

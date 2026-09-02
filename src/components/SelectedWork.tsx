@@ -1,3 +1,4 @@
+import { AnimatedSection } from "./AnimatedSection"
 import distributorOs from "../assets/project-distributoros.jpg"
 import fintech from "../assets/project-fintech.jpg"
 
@@ -51,17 +52,17 @@ function SelectedWork() {
     >
       <div className="mb-module-gap grid grid-cols-12 gap-gutter border-b border-border-subtle pb-6">
         <div className="col-span-12">
-          <h2 className="font-metadata-caps text-metadata-caps text-tertiary-container">
-            02 // SELECTED WORK
-          </h2>
+          <AnimatedSection>
+            <h2 className="font-metadata-caps text-metadata-caps text-tertiary-container">
+              02 // SELECTED WORK
+            </h2>
+          </AnimatedSection>
         </div>
       </div>
       <div className="flex flex-col gap-[120px]">
-        {projects.map((project) => (
-          <article
-            key={project.index}
-            className="group grid grid-cols-12 gap-gutter"
-          >
+        {projects.map((project, index) => (
+          <AnimatedSection key={project.index} delay={index * 0.1}>
+            <article className="group grid grid-cols-12 gap-gutter">
             <div
               className={`col-span-12 overflow-hidden border border-border-subtle bg-surface-container lg:col-span-7 ${
                 project.reverse ? "order-1 lg:order-2" : ""
@@ -116,7 +117,8 @@ function SelectedWork() {
                 ))}
               </div>
             </div>
-          </article>
+            </article>
+          </AnimatedSection>
         ))}
       </div>
     </section>

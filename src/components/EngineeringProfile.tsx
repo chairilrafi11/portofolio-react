@@ -6,27 +6,27 @@ interface SkillGroup {
 const groups: SkillGroup[] = [
   {
     title: "Backend",
-    items: ["Node.js / NestJS", "Go / Echo", "Python / FastAPI", "GraphQL / REST"],
+    items: ["Golang", "Laravel", "Python", "REST / API Design"],
   },
   {
     title: "Frontend",
-    items: ["React / Next.js", "Vue / Nuxt", "TypeScript", "Tailwind CSS"],
+    items: ["React / Next.js", "Vue.js", "Flutter (Web)", "TypeScript"],
   },
   {
     title: "Mobile",
-    items: ["Flutter", "React Native", "iOS (Swift) Basics", "Android (Kotlin) Basics"],
+    items: ["Flutter", "Kotlin (Android)", "Native Android"],
   },
   {
     title: "Data",
-    items: ["PostgreSQL", "MongoDB", "Redis", "Elasticsearch"],
+    items: ["PostgreSQL", "Database Design"],
   },
   {
     title: "Infrastructure",
-    items: ["Docker / Kubernetes", "AWS / GCP", "CI/CD Pipelines", "Terraform"],
+    items: ["Play Store Deployment", "App Store Deployment", "CI/CD", "TriPay Gateway"],
   },
   {
     title: "Architecture",
-    items: ["Microservices", "Event-Driven Design", "System Design", "Performance Tuning"],
+    items: ["Computer Vision", "Scrum / Agile", "System Design", "Team Leadership"],
   },
 ]
 

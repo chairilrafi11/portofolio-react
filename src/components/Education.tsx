@@ -6,14 +6,14 @@ interface EducationItem {
 
 const education: EducationItem[] = [
   {
-    institution: "STIKOM Bali",
-    program: "System Information | Semester 5",
-    period: "2026 — Present",
+    institution: "Universitas Komputer Indonesia",
+    program: "High School Diploma, Information Systems | GPA: 3.62/4.00",
+    period: "Sep 2023 — Jul 2027 (Expected)",
   },
   {
-    institution: "Universitas Komputer Indonesia",
-    program: "System Information | Semesters 1-4",
-    period: "2023 — 2025",
+    institution: "SMKN 4 Bandung",
+    program: "Senior High School, Software Engineering | Score: 85.00/100.00",
+    period: "Aug 2016 — Jun 2019",
   },
 ]
 
@@ -45,7 +45,7 @@ function Education() {
               </span>
             </div>
             <div className="col-span-12 md:col-span-8 md:text-right">
-              <span className="font-display-lg text-display-lg opacity-20">
+              <span className="font-headline-md text-headline-md opacity-20">
                 {edu.period}
               </span>
             </div>
