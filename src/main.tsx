@@ -1,7 +1,9 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './index.css'
 import App from './App'
+import ProjectsPage from './pages/ProjectsPage'
 
 const rootEl = document.getElementById('root')
 if (!rootEl) {
@@ -10,6 +12,12 @@ if (!rootEl) {
 
 createRoot(rootEl).render(
   <StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="*" element={<App />} />
+      </Routes>
+    </BrowserRouter>
   </StrictMode>,
 )

@@ -7,7 +7,7 @@ interface EducationItem {
 const education: EducationItem[] = [
   {
     institution: "Universitas Komputer Indonesia",
-    program: "High School Diploma, Information Systems | GPA: 3.62/4.00",
+    program: "Bachelor's Degree (S1), Information Systems | GPA: 3.62/4.00",
     period: "Sep 2023 — Jul 2027 (Expected)",
   },
   {
@@ -26,7 +26,7 @@ function Education() {
       <div className="mb-module-gap grid grid-cols-12 gap-gutter border-b border-border-subtle pb-6">
         <div className="col-span-12">
           <h2 className="font-metadata-caps text-metadata-caps text-tertiary-container">
-            06 // EDUCATION
+              04 // EDUCATION
           </h2>
         </div>
       </div>

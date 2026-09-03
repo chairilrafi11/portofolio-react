@@ -7,6 +7,20 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
+    company: "PT. BALIMMO DEVELOPMENT GROUP — Bali, Indonesia",
+    role: "Senior Full Stack Developer | Jan 2026 – Present",
+    context:
+      "Context: Architecting a villa development & rental ecosystem — from an internal Laravel CRM to a greenfield microservices SAAS.",
+    bullets: [
+      "Leading end-to-end development of two interconnected products: the internal 'Villa Construction' CRM and the greenfield 'Villa Management' SAAS, covering the full villa development and short-term rental lifecycle for clients across multiple countries.",
+      "Engineered 'Villa Construction' on a Laravel monolith, delivering modules for leads, prospects, projects, and billing transactions (estimates, fundcalls, contracts, land fundcalls), alongside accounting features (forecasting, recurring billing, contractor payments), share-invest, and webinar management.",
+      "Integrated Odoo for document signing workflows, streamlining contract execution within the construction CRM.",
+      "Designed and built 'Villa Management' from scratch, architecting it as microservices across a Next.js + React/Vite web frontend, NestJS monorepo backend (Prisma + Fastify), MinIO object storage, FastAPI image compression service, Redis caching, and Flutter mobile apps (Android & iOS) with FCM push notifications.",
+      "Integrated ChannelX to unify OTAs (Airbnb, Booking, Trip.com, etc.) into a single PMS/omnichannel hub, adding accounting, per-villa P&L reporting, and role-based task/inspection scheduling for housekeeping, pool, and villa manager staff.",
+      "Containerized all services using Docker with PostgreSQL, ensuring consistent and reliable deployments across every environment.",
+    ],
+  },
+  {
     company: "PT. ALPHA CIPTA TEKNOLOGI — Bandung, Indonesia",
     role: "Senior Full Stack Developer & IT Consultant | Jun 2025 – Dec 2025",
     context: "Context: Spearheading Web GIS, CRM/PJP, and POS system development.",
@@ -87,7 +101,7 @@ function Experience() {
       <div className="mb-module-gap grid grid-cols-12 gap-gutter border-b border-border-subtle pb-6">
         <div className="col-span-12">
           <h2 className="font-metadata-caps text-metadata-caps text-tertiary-container">
-            06 // EXPERIENCE
+              02 // EXPERIENCE
           </h2>
         </div>
       </div>

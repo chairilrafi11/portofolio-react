@@ -38,7 +38,7 @@ function Snapshot() {
             <span className="mb-2 block font-metadata-sm text-metadata-sm text-tertiary-container">
               LOCATION
             </span>
-            <span className="font-headline-md text-headline-md">Bandung, ID</span>
+            <span className="font-headline-md text-headline-md">Bali, ID</span>
           </AnimatedSection>
         </div>
       </div>

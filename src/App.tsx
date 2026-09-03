@@ -2,13 +2,11 @@ import Navbar from "./components/Navbar"
 import Hero from "./components/Hero"
 import Biography from "./components/Biography"
 import Snapshot from "./components/Snapshot"
-import SelectedWork from "./components/SelectedWork"
-import EngineeringProfile from "./components/EngineeringProfile"
-import Certifications from "./components/Certifications"
-import HowIWork from "./components/HowIWork"
 import Experience from "./components/Experience"
+import EngineeringProfile from "./components/EngineeringProfile"
 import Education from "./components/Education"
-import MoreWork from "./components/MoreWork"
+import SelectedWork from "./components/SelectedWork"
+import Certifications from "./components/Certifications"
 import Footer from "./components/Footer"
 
 function App() {
@@ -20,13 +18,11 @@ function App() {
         <Hero />
         <Biography />
         <Snapshot />
-        <SelectedWork />
-        <EngineeringProfile />
-        <Certifications />
-        <HowIWork />
         <Experience />
+        <EngineeringProfile />
         <Education />
-        <MoreWork />
+        <SelectedWork />
+        <Certifications />
       </main>
       <Footer />
     </div>

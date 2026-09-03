@@ -6,7 +6,7 @@ interface SkillGroup {
 const groups: SkillGroup[] = [
   {
     title: "Backend",
-    items: ["Golang", "Laravel", "Python", "REST / API Design"],
+    items: ["NestJS", "Golang", "Laravel", "Python / FastAPI", "REST / API Design"],
   },
   {
     title: "Frontend",
@@ -18,11 +18,11 @@ const groups: SkillGroup[] = [
   },
   {
     title: "Data",
-    items: ["PostgreSQL", "Database Design"],
+    items: ["PostgreSQL", "Database Design", "MinIO / S3 Storage"],
   },
   {
     title: "Infrastructure",
-    items: ["Play Store Deployment", "App Store Deployment", "CI/CD", "TriPay Gateway"],
+    items: ["Docker", "Play Store Deployment", "App Store Deployment", "CI/CD", "TriPay Gateway"],
   },
   {
     title: "Architecture",
