@@ -36,7 +36,7 @@ function EngineeringProfile() {
       id="profile"
       className="border-b border-border-subtle py-vertical-section"
     >
-      <div className="mb-module-gap grid grid-cols-12 gap-gutter border-b border-border-subtle pb-6">
+      <div className="mb-module-gap grid grid-cols-12 gap-gutter pb-6">
         <div className="col-span-12">
           <h2 className="font-metadata-caps text-metadata-caps text-tertiary-container">
             03 // ENGINEERING PROFILE
@@ -44,16 +44,10 @@ function EngineeringProfile() {
         </div>
       </div>
       <div className="grid grid-cols-12 gap-gutter">
-        {groups.map((group, i) => (
+        {groups.map((group) => (
           <div
             key={group.title}
-            className={`col-span-12 border-b border-border-subtle pb-8 md:col-span-6 lg:col-span-4 ${
-              i < 3 ? "md:border-b-0" : ""
-            } ${i === 3 ? "mt-0 lg:mt-module-gap" : ""} ${
-              i === 4 ? "mt-0 md:border-b-0 lg:mt-module-gap" : ""
-            } ${i === 5 ? "mt-0 lg:mt-module-gap" : ""} ${
-              i > 1 ? "md:pb-8 lg:pb-0" : ""
-            }`}
+            className="col-span-12 border-b border-border-subtle pb-8 md:col-span-6 md:border-b-0 md:pb-0 lg:col-span-4"
           >
             <h3 className="mb-6 font-headline-md text-headline-md">
               {group.title}

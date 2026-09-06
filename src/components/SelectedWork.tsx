@@ -14,7 +14,7 @@ function SelectedWork() {
       id="work"
       className="border-b border-border-subtle py-vertical-section"
     >
-      <div className="mb-module-gap flex flex-wrap items-end justify-between gap-4 border-b border-border-subtle pb-6">
+      <div className="mb-module-gap flex flex-wrap items-end justify-between gap-4 pb-6">
         <div>
           <h2 className="font-metadata-caps text-metadata-caps text-tertiary-container">
             05 // SELECTED WORK
@@ -32,7 +32,7 @@ function SelectedWork() {
           <span className="material-symbols-outlined text-sm">arrow_forward</span>
         </Link>
       </div>
-      <div className="grid grid-cols-1 gap-x-gutter gap-y-16 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-x-gutter gap-y-12 md:grid-cols-2 md:gap-y-16 lg:grid-cols-3">
         {featuredProjects.map((project, index) => (
           <AnimatedSection key={project.id} delay={(index % 3) * 0.05}>
             <ProjectCard project={project} onOpen={setActive} />

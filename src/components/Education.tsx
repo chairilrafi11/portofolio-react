@@ -23,7 +23,7 @@ function Education() {
       id="education"
       className="border-b border-border-subtle py-vertical-section"
     >
-      <div className="mb-module-gap grid grid-cols-12 gap-gutter border-b border-border-subtle pb-6">
+      <div className="mb-module-gap grid grid-cols-12 gap-gutter pb-6">
         <div className="col-span-12">
           <h2 className="font-metadata-caps text-metadata-caps text-tertiary-container">
               04 // EDUCATION
@@ -31,10 +31,12 @@ function Education() {
         </div>
       </div>
       <div className="flex flex-col gap-12">
-        {education.map((edu) => (
+        {education.map((edu, i) => (
           <div
             key={edu.institution}
-            className="grid grid-cols-12 gap-gutter border-b border-border-subtle pb-12"
+            className={`grid grid-cols-12 gap-gutter pb-12 ${
+              i < education.length - 1 ? "border-b border-border-subtle" : ""
+            }`}
           >
             <div className="col-span-12 md:col-span-4">
               <h3 className="mb-2 font-headline-md text-headline-md">

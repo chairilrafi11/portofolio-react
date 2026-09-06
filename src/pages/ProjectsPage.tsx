@@ -80,7 +80,7 @@ function ProjectsPage() {
               ← BACK TO HOME
             </Link>
           </div>
-          <div className="grid grid-cols-1 gap-x-gutter gap-y-16 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-x-gutter gap-y-12 md:grid-cols-2 md:gap-y-16 lg:grid-cols-3">
             {visible.map((project, index) => (
               <AnimatedSection key={project.id} delay={(index % 3) * 0.05}>
                 <ProjectCard project={project} onOpen={setActive} />

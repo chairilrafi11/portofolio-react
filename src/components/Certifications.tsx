@@ -15,7 +15,7 @@ function Certifications() {
       id="certifications"
       className="border-b border-border-subtle py-vertical-section"
     >
-      <div className="mb-module-gap grid grid-cols-12 gap-gutter border-b border-border-subtle pb-6">
+      <div className="mb-module-gap grid grid-cols-12 gap-gutter pb-6">
         <div className="col-span-12">
           <h2 className="font-metadata-caps text-metadata-caps text-tertiary-container">
               06 // CERTIFICATIONS
