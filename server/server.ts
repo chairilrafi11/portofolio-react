@@ -1,4 +1,4 @@
-import { existsSync } from "node:fs"
+import { existsSync, statSync } from "node:fs"
 import { join } from "node:path"
 
 const PORT = Number(process.env.PORT ?? 3100)
@@ -22,11 +22,15 @@ const server = Bun.serve({
     const pathname = new URL(req.url).pathname
     if (pathname === "/healthz") return new Response("ok", { status: 200 })
     const fsPath = join(DIST, pathname === "/" ? "index.html" : pathname)
-    if (existsSync(fsPath)) {
+    function isFile(p: string) {
+      try { return statSync(p).isFile() } catch { return false }
+    }
+    const resolved = isFile(fsPath) ? fsPath : isFile(join(fsPath, "index.html")) ? join(fsPath, "index.html") : null
+    if (resolved) {
       const isAsset = ASSET_RE.test(pathname)
-      return new Response(await Bun.file(fsPath).arrayBuffer(), {
+      return new Response(await Bun.file(resolved).arrayBuffer(), {
         headers: {
-          "Content-Type": contentTypeFor(fsPath),
+          "Content-Type": contentTypeFor(resolved),
           ...(isAsset
             ? { "Cache-Control": "public, max-age=31536000, immutable" }
             : { "Cache-Control": "no-cache" }),
