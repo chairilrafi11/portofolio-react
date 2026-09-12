@@ -11,29 +11,57 @@ Built as a lightweight **React + Vite** project with **TypeScript** and **Tailwi
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS v4](https://tailwindcss.com/) (via `@tailwindcss/postcss`)
 - [Oxlint](https://oxc.rs/) for linting
-- [pnpm](https://pnpm.io/) as package manager
+- [Bun](https://bun.sh/) as package manager
 
 ## Getting Started
 
 ```bash
 # Install dependencies
-pnpm install
+bun install
 
 # Start the dev server
-pnpm dev
+bun dev
 
 # Typecheck
-pnpm typecheck
+bun typecheck
 
 # Lint
-pnpm lint
+bun lint
 
-# Production build
-pnpm build
+# Production build (includes prerender for SEO/GEO)
+bun build
 
 # Preview production build
-pnpm preview
+bun preview
 ```
+
+## Docker / Deploy
+
+This project is packaged with Docker and deployed via GitHub Actions → GHCR → homelab.
+
+### Local Docker
+
+```bash
+docker build -t portofolio .
+docker run -p 3100:3100 portofolio
+```
+
+The app is served by a lightweight Bun server on port `3100` with SPA fallback.
+
+### Homelab (compose)
+
+```yaml
+services:
+  portfolio:
+    image: ghcr.io/chairilrafi11/portofolio-react:latest
+    ports:
+      - "127.0.0.1:3100:3100"
+    environment:
+      - PORT=3100
+    restart: unless-stopped
+```
+
+Point your reverse proxy (or Cloudflare Tunnel) at `127.0.0.1:3100`.
 
 ## Project Structure
 
