@@ -8,8 +8,14 @@ import Education from "./components/Education"
 import SelectedWork from "./components/SelectedWork"
 import Certifications from "./components/Certifications"
 import Footer from "./components/Footer"
+import { useDocumentMeta } from "./lib/useDocumentMeta"
 
 function App() {
+  useDocumentMeta({
+    title: "Chairil Rafi Purnama | Senior Full Stack Developer",
+    description: "Building software that holds up in production.",
+    canonical: "https://chairil.net/",
+  })
   return (
     <div className="relative min-h-screen bg-background-base font-body-md text-on-background selection:bg-primary-container selection:text-on-primary-container">
       <div className="grid-bg pointer-events-none fixed inset-0 z-0 opacity-20" />

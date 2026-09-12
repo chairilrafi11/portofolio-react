@@ -7,6 +7,7 @@ import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import ProjectCard from "../components/ProjectCard"
 import ProjectModal from "../components/ProjectModal"
+import { useDocumentMeta } from "../lib/useDocumentMeta"
 
 type Filter = "all" | ProjectPlatform
 
@@ -17,6 +18,11 @@ const FILTERS: { id: Filter; label: string }[] = [
 ]
 
 function ProjectsPage() {
+  useDocumentMeta({
+    title: "Projects | Chairil Rafi Purnama",
+    description: "A body of work built to hold up in production.",
+    canonical: "https://chairil.net/projects",
+  })
   const [filter, setFilter] = useState<Filter>("all")
   const [active, setActive] = useState<Project | null>(null)
 
