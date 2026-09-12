@@ -1,5 +1,5 @@
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { createRoot, hydrateRoot } from 'react-dom/client'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './index.css'
 import App from './App'
@@ -11,7 +11,7 @@ if (!rootEl) {
   throw new Error('Root element #root not found')
 }
 
-createRoot(rootEl).render(
+const router = (
   <StrictMode>
     <BrowserRouter>
       <ScrollToTop />
@@ -21,5 +21,11 @@ createRoot(rootEl).render(
         <Route path="*" element={<App />} />
       </Routes>
     </BrowserRouter>
-  </StrictMode>,
+  </StrictMode>
 )
+
+if (rootEl.hasChildNodes()) {
+  hydrateRoot(rootEl, router)
+} else {
+  createRoot(rootEl).render(router)
+}
