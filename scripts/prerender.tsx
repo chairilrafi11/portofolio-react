@@ -8,7 +8,8 @@ import ProjectsPage from "../src/pages/ProjectsPage.tsx"
 import { projects } from "../src/data/projects.ts"
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
-const DIST = join(__dirname, "..", "dist")
+const ROOT = join(__dirname, "..")
+const DIST = join(ROOT, "dist")
 const BASE = "https://chairil.net"
 
 const routes = [
@@ -32,8 +33,33 @@ function buildJsonld() {
   return `<script type="application/ld+json">${JSON.stringify(itemList)}</script>`
 }
 
+function buildAssetRewriteMap(): Record<string, string> {
+  const manifest = JSON.parse(
+    readFileSync(join(DIST, ".vite", "manifest.json"), "utf-8")
+  ) as Record<
+    string,
+    { file: string; src?: string; assets?: string[] }
+  >
+  const map: Record<string, string> = {}
+  for (const [, entry] of Object.entries(manifest)) {
+    if (entry.src) {
+      map[join(ROOT, entry.src)] = "/" + entry.file
+    }
+  }
+  return map
+}
+
+function rewriteAssets(html: string, map: Record<string, string>): string {
+  let out = html
+  for (const [src, dist] of Object.entries(map)) {
+    out = out.split(src).join(dist)
+  }
+  return out
+}
+
 async function main() {
   const template = readFileSync(join(DIST, "index.html"), "utf-8")
+  const assetMap = buildAssetRewriteMap()
 
   const pages = [
     { entry: "/", jsonld: undefined },
@@ -42,7 +68,8 @@ async function main() {
 
   for (const page of pages) {
     const router = createMemoryRouter(routes, { initialEntries: [page.entry] })
-    const html = renderToString(<RouterProvider router={router} />)
+    let html = renderToString(<RouterProvider router={router} />)
+    html = rewriteAssets(html, assetMap)
     const out = template
       .replace('<div id="root"></div>', `<div id="root">${html}</div>`)
       .replace("</head>", `${page.jsonld ?? ""}</head>`)
